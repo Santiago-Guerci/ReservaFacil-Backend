@@ -1,0 +1,24 @@
+{
+  "name": "restaurants-api",
+  "version": "1.0.0",
+  "description": "Simple Node.js + Express + Mongoose API for restaurants (college project)",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "seed": "node src/seed/seedRestaurants.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "mongodb": "^6.20.0",
+    "mongoose": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
