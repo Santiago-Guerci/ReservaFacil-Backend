@@ -7,6 +7,11 @@ const restaurantSchema = new Schema({
   cuisine: { type: String, trim: true },
   rating: { type: Number, min: 0, max: 5, default: 0 },
   priceRange: { type: String, enum: ["$", "$$", "$$$", "$$$$"], default: "$$" },
+  imageUrl: { type: String, trim: true },
+  location: {
+    lat: { type: Number, required: true },
+    lng: { type: Number, required: true },
+  },
   createdAt: { type: Date, default: Date.now },
 });
 

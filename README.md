@@ -187,17 +187,7 @@ Notas sobre seguridad y red
 
 ## Despliegue opcional en AWS Lambda
 
-El proyecto ya tiene una adaptación mínima para Lambda usando `serverless-http`:
-
-- Handler: `src/index.handler` (usa ESM y `package.json` con `type: "module"`).
-- Si quieres desplegar en Lambda directamente: empaqueta `node_modules`, `package.json` y `src/` en un zip y sube o usa frameworks (Serverless Framework / SAM).
-
-Puntos clave para Lambda:
-
-- Runtime: Node.js 18.x o 20.x (recomendado para ESM).
-- Variables de entorno configuradas en la función.
-- Handler: `src/index.handler`.
-- Si usas API Gateway, integra el endpoint HTTP con la función.
+Si en el futuro quieres adaptar esta API para ejecutarla como función en AWS Lambda, se puede hacer, pero requiere cambios específicos (handler compatible con Lambda, empaquetado con dependencias y configuración de API Gateway). Si lo deseas, puedo preparar un ejemplo y los pasos necesarios para esa adaptación.
 
 ## Recomendaciones de producción
 
@@ -216,7 +206,11 @@ El archivo `src/db/mongoose.js` inicia la conexión en la importación del módu
 Si quieres, puedo:
 
 - Añadir un ejemplo de `systemd` service file para tu instancia.
-- Añadir un `serverless.yml` de ejemplo para desplegar con Serverless Framework.
+- Añadir instrucciones para crear un paquete ZIP listo para Lambda.
+
+Si quieres, puedo:
+
+- Añadir un ejemplo de `systemd` service file para tu instancia.
 - Añadir instrucciones para crear un paquete ZIP listo para Lambda.
 
 — Fin —

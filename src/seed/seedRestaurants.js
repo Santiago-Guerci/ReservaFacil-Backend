@@ -5,7 +5,7 @@
 // load environment variables so mongoose picks up MONGODB_URI
 import "dotenv/config";
 import mongoose from "../db/mongoose.js";
-import Restaurant from "../models/restaurant.js";
+import Restaurant from "../db/restaurant.schema.js";
 
 const sample = [
   {
@@ -14,6 +14,8 @@ const sample = [
     cuisine: "Italian",
     rating: 4.5,
     priceRange: "$$",
+    imageUrl: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1200&auto=format&fit=crop",
+    location: { lat: -34.6037, lng: -58.3816 },
   },
   {
     name: "Sabor Local",
@@ -21,6 +23,8 @@ const sample = [
     cuisine: "Uruguayan",
     rating: 4.2,
     priceRange: "$$",
+    imageUrl: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop",
+    location: { lat: -34.603, lng: -58.44 },
   },
   {
     name: "The Vegan Spot",
@@ -28,6 +32,8 @@ const sample = [
     cuisine: "Vegan",
     rating: 4.8,
     priceRange: "$$",
+    imageUrl: "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?q=80&w=1200&auto=format&fit=crop",
+    location: { lat: -34.6, lng: -58.38 },
   },
   {
     name: "Sushi Hana",
@@ -35,6 +41,8 @@ const sample = [
     cuisine: "Japanese",
     rating: 4.7,
     priceRange: "$$$",
+    imageUrl: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&auto=format&fit=crop&q=80",
+    location: { lat: -34.59, lng: -58.39 },
   },
   {
     name: "Taco Town",
@@ -42,6 +50,8 @@ const sample = [
     cuisine: "Mexican",
     rating: 4.0,
     priceRange: "$",
+    imageUrl: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=1200&auto=format&fit=crops",
+    location: { lat: -34.61, lng: -58.37 },
   },
 ];
 
