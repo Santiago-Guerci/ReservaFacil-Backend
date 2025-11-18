@@ -12,6 +12,8 @@ const restaurantSchema = new Schema({
     lat: { type: Number, required: true },
     lng: { type: Number, required: true },
   },
+  zone: { type: String, trim: true },
+  description: { type: String, trim: true },
   createdAt: { type: Date, default: Date.now },
 });
 
