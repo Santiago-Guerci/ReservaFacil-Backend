@@ -59,10 +59,24 @@ const deleteRestaurant = async (req, res) => {
   }
 };
 
+const getLeastBookedRestaurant = async (req, res, next) => {
+  try {
+    const restaurant = await RestaurantService.getLeastBookedRestaurant();
+    
+    if (!restaurant) {
+      return res.status(404).json({ error: "No hay restaurantes" });
+    }
+
+    res.json(restaurant);
+  } catch (err) {
+    next(err);
+  }
+};
 export default {
   postRestaurant,
   getRestaurantById,
   getAllRestaurants,
   patchRestaurant,
   deleteRestaurant,
+  getLeastBookedRestaurant,
 };
