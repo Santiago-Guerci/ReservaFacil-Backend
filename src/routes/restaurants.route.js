@@ -1,12 +1,13 @@
 import express from "express";
 import restaurantsController from "../controllers/restaurants.controller.js";
+import { ensureAdmin } from "../middlewares/restaurants.middleware.js";
 
 const router = express.Router();
 
-router.post("/", restaurantsController.postRestaurant);
+router.post("/", ensureAdmin, restaurantsController.postRestaurant);
 router.get("/", restaurantsController.getAllRestaurants);
 router.get("/:id", restaurantsController.getRestaurantById);
-router.patch("/:id", restaurantsController.patchRestaurant);
-router.delete("/:id", restaurantsController.deleteRestaurant);
+router.patch("/:id", ensureAdmin, restaurantsController.patchRestaurant);
+router.delete("/:id", ensureAdmin, restaurantsController.deleteRestaurant);
 
 export default router;
