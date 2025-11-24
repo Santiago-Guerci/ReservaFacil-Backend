@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post("/", ensureAdmin, restaurantsController.postRestaurant);
 router.get("/", restaurantsController.getAllRestaurants);
+router.get("/least-booked", restaurantsController.getLeastBookedRestaurant);
 router.get("/:id", restaurantsController.getRestaurantById);
 router.patch("/:id", ensureAdmin, restaurantsController.patchRestaurant);
 router.delete("/:id", ensureAdmin, restaurantsController.deleteRestaurant);
