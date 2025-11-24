@@ -10,7 +10,8 @@
     "seed": "node src/seed/seedRestaurants.js",
     "seed:users": "node src/seed/seedUsers.js",
     "seed:reservations": "node src/seed/seedReservations.js",
-    "seed:all": "node src/seed/seedRestaurants.js && node src/seed/seedUsers.js && node src/seed/seedReservations.js"
+    "seed:all": "node src/seed/seedRestaurants.js && node src/seed/seedUsers.js && node src/seed/seedReservations.js",
+    "test": "mocha --recursive --exit"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,9 @@
     "mongoose": "^7.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "sinon": "^15.0.0"
   }
 }
