@@ -1,7 +1,7 @@
 import RestaurantFactory from "../models/DAOs/restaurants.factory.js";
 import ReservationsModel from "../models/reservations.model.js"; 
 
-const RestaurantModel = RestaurantFactory.create("MEM");
+const RestaurantModel = RestaurantFactory.create("MONGO");
 
 const postRestaurant = async (data) => {
   const restaurant = await RestaurantModel.createRestaurant(data);
