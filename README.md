@@ -1,52 +1,3 @@
-# Restaurants API (Node.js + Express + Mongoose)
-
-Simple API for a college project. Implements the four CRUD operations for a Restaurant model, a MongoDB connection, and a seed script with sample restaurants.
-
-Getting started
-
-1. Ensure you have Node.js (>=14) and MongoDB installed and running locally.
-2. From the project root, install dependencies:
-
-```bash
-npm install
-```
-
-3. (Optional) Set a custom MongoDB URI in `.env` file:
-
-```
-MONGODB_URI=mongodb://127.0.0.1:27017/restaurants-db
-PORT=3000
-```
-
-4. Seed the database with sample restaurants:
-
-```bash
-npm run seed
-```
-
-5. Start the server:
-
-```bash
-npm start
-```
-
-API endpoints
-
-- POST /restaurants -> create a restaurant
-- GET /restaurants -> list restaurants
-- GET /restaurants/:id -> get one restaurant
-- PATCH /restaurants/:id -> update (partial)
-- DELETE /restaurants/:id -> delete
-
-Model fields (example): name (required), address, cuisine, rating (0-5), priceRange ($ - $$$$)
-
-Seed data examples
-
-- Casa Bella (Italian)
-- Sabor Local (Uruguayan)
-- The Vegan Spot (Vegan)
-- Sushi Hana (Japanese)
-
 ## ReservaFacil-Backend — API de Restaurantes (Node.js + Express + Mongoose)
 
 Esta API es un proyecto educativo que implementa operaciones CRUD sobre un modelo `Restaurant`, conexión a MongoDB y un script de seed con datos de ejemplo.
@@ -177,27 +128,8 @@ Variables de entorno importantes
 
 Nota sobre despliegue en AWS Lightsail
 La API fue desplegada y probada en AWS Lightsail en una instancia con Node.js. Flujo mínimo para actualizar en la instancia:
-
-```bash
-# entrar por SSH, dentro del repo:
-git pull origin main
-npm ci --only=production
-# reiniciar el proceso (ej. pm2)
-pm2 restart reserva-facil
-```
-
-URL pública de prueba
-Puedes probar los mismos endpoints en la instancia publicada en:
+La URL base pública de la API desplegada es:
 
 http://3.91.226.96:3000/
 
-Precauciones
-
-- No ejecutes los scripts de `seed` en una base de datos de producción (borran colecciones). Haz backup antes de sembrar datos.
-- Asegura `JWT_SECRET` y las credenciales de la base de datos en producción.
-
-Si quieres, puedo: añadir middleware de autenticación obligatorio, ejemplos de `systemd` o `pm2` service file, o preparar pasos para empaquetar la app para AWS Lambda.
-
 Fin.
-
-- Habilita logs y rotación (PM2 o systemd + logrotate).
