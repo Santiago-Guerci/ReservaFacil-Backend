@@ -1,8 +1,3 @@
-/**
- * Seed script - inserts a few restaurant documents into the DB.
- * Run with: npm run seed
- */
-// load environment variables so mongoose picks up MONGODB_URI
 import "dotenv/config";
 import mongoose from "../db/mongoose.js";
 import Restaurant from "../db/restaurant.schema.js";

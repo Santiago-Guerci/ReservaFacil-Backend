@@ -15,7 +15,7 @@ app.use(cors());
 
 app.use(
   cors({
-    origin: "*", // change this to your local app URL (e.g., React dev server)
+    origin: "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
 );

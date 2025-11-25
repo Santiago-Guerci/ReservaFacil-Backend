@@ -13,7 +13,6 @@ const getLeastReservationsOnTuesday = async (limit = 5) => {
               $expr: { $eq: ["$restaurant", "$$restId"] },
             },
           },
-          // compute day of week (1=Sunday .. 7=Saturday)
           { $addFields: { dow: { $dayOfWeek: "$date" } } },
           { $match: { $expr: { $eq: ["$dow", 3] } } },
         ],

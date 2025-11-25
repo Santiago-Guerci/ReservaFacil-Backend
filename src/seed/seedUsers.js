@@ -24,7 +24,6 @@ const sample = [
 
 async function seed() {
   try {
-    // prepare hashed users
     const hashed = await Promise.all(
       sample.map(async (u) => ({
         name: u.name,
